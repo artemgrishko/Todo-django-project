@@ -2,4 +2,19 @@
 
 {% block content %}
   <h1>Tags</h1>
+  {% if tag_list %}
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    {% for tag in tag_list %}
+      <tr>
+        <td>{{ tag.name }}</td>
+        <td>#</td>
+        <td>#</td>
+      </tr>
+    {% endfor %}
+    {% endif %}
 {% endblock %}
