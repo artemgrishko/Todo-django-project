@@ -6,9 +6,9 @@ from todo.models import Task, Tag
 
 
 def task_list(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.prefetch_related('tags')
     for task in tasks:
-        task.tag_list = ", ".join(tag.name for tag in task.tags.all())
+        task.tag_list = " ".join(tag.name for tag in task.tags.all())
     return render(request, 'todo/task_list.html', {'task_list': tasks})
 
 
