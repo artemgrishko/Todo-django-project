@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Tags</h1>
+  <h1>
+    Tags
+    <a href="{% url 'todo:tag_create' %}" class="btn btn-primary link-to-page">
+      Add
+    </a>
+  </h1>
   {% if tag_list %}
     <table class="table">
       <tr>
