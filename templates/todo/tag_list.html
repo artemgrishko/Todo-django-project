@@ -3,7 +3,7 @@
 {% block content %}
   <h1>
     Tags
-    <a href="{% url 'todo:tag_create' %}" class="btn btn-primary link-to-page">
+    <a href="{% url 'todo:tag-create' %}" class="btn btn-primary link-to-page">
       Add
     </a>
   </h1>
@@ -17,7 +17,7 @@
     {% for tag in tag_list %}
       <tr>
         <td>{{ tag.name }}</td>
-        <td>#</td>
+        <td><a href="{% url 'todo:tag-update' pk=tag.id %}" class="btn btn-secondary">Update</a></td>
         <td>#</td>
       </tr>
     {% endfor %}
