@@ -33,10 +33,10 @@
       </div>
     </div>
     <p>
-      Created: {{ task.date }} Deadline: {{ task.deadline }}
-{#      {% if task.deadline %}#}
-{#        Deadline: {{ task.deadline }}#}
-{#      {% endif %}#}
+      Created: {{ task.date }}
+      {% if task.deadline %}
+        <span style="color: red">Deadline: {{ task.deadline }}</span>
+      {% endif %}
     </p>
     <p>
       Tags: {{ task.tag_list }}
