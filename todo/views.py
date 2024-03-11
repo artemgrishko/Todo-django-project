@@ -51,7 +51,7 @@ class TagDeleteView(generic.DeleteView):
     success_url = reverse_lazy("todo:tag-list")
 
 
-def assign_status_to_task(request, task_id):
+def assign_status_to_task(request, task_id: int):
     task = Task.objects.get(id=task_id)
     if task.is_completed:
         task.is_completed = False
@@ -59,4 +59,3 @@ def assign_status_to_task(request, task_id):
         task.is_completed = True
     task.save()
     return redirect("todo:task-list")
-
